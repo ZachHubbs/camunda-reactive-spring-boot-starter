@@ -1,7 +1,0 @@
-dev\zacharyhubbs\camundareactiveclient\client\TaskClient.class
-dev\zacharyhubbs\camundareactiveclient\boot\autoconfigure\WebClientAutoConfiguration.class
-dev\zacharyhubbs\camundareactiveclient\boot\autoconfigure\WebClientProperties.class
-dev\zacharyhubbs\camundareactiveclient\service\TaskService.class
-dev\zacharyhubbs\camundareactiveclient\model\TaskImpl.class
-META-INF\spring-configuration-metadata.json
-dev\zacharyhubbs\camundareactiveclient\client\ReactiveClient.class
