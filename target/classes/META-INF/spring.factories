@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+dev.zacharyhubbs.camundareactiveclient.boot.autoconfigure.WebClientAutoConfiguration,\
+dev.zacharyhubbs.camundareactiveclient.service.TaskService,\
+dev.zacharyhubbs.camundareactiveclient.client.TaskClient

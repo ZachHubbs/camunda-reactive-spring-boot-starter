@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "camunda.client",
+      "type": "dev.zacharyhubbs.camundareactiveclient.boot.autoconfigure.WebClientProperties",
+      "sourceType": "dev.zacharyhubbs.camundareactiveclient.boot.autoconfigure.WebClientProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "camunda.client.base-url",
+      "type": "java.lang.String",
+      "sourceType": "dev.zacharyhubbs.camundareactiveclient.boot.autoconfigure.WebClientProperties"
+    }
+  ],
+  "hints": []
+}
