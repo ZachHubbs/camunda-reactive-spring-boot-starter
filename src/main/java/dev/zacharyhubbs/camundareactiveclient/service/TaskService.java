@@ -1,7 +1,7 @@
 package dev.zacharyhubbs.camundareactiveclient.service;
 
 import dev.zacharyhubbs.camundareactiveclient.client.TaskClient;
-import dev.zacharyhubbs.camundareactiveclient.model.TaskImpl;
+import org.camunda.bpm.engine.rest.dto.task.TaskDto;
 import org.camunda.bpm.engine.rest.dto.task.TaskQueryDto;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +16,10 @@ public class TaskService {
         this.client = client;
     }
 
-    public TaskImpl getTaskById(String taskId){
+    public TaskDto getTaskById(String taskId){
         return client.getResult(taskId);
     }
-    public List<TaskImpl> getTaskByQuery(TaskQueryDto taskQueryDto){
+    public List<TaskDto> getTaskByQuery(TaskQueryDto taskQueryDto){
         return client.getResult(taskQueryDto);
     }
 }

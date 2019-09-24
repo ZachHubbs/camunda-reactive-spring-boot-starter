@@ -1,8 +1,8 @@
 package dev.zacharyhubbs.camundareactiveclient.client;
 
 import dev.zacharyhubbs.camundareactiveclient.boot.autoconfigure.WebClientProperties;
-import dev.zacharyhubbs.camundareactiveclient.model.TaskImpl;
 import lombok.Data;
+import org.camunda.bpm.engine.rest.dto.task.TaskDto;
 import org.camunda.bpm.engine.rest.dto.task.TaskQueryDto;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -44,13 +44,13 @@ public class TaskClient implements ReactiveClient {
                 .exchange();
     }
 
-    public TaskImpl getResult(String taskId) {
+    public TaskDto getResult(String taskId) {
 
-        return result(taskId).flatMap(res -> res.bodyToMono(TaskImpl.class)).block();
+        return result(taskId).flatMap(res -> res.bodyToMono(TaskDto.class)).block();
 
     }
 
-    public List<TaskImpl> getResult(TaskQueryDto taskQueryDto){
+    public List<TaskDto> getResult(TaskQueryDto taskQueryDto){
 
         return results(taskQueryDto).flatMap(res -> res.bodyToMono(List.class)).block();
     }

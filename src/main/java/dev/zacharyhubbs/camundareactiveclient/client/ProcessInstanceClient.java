@@ -1,8 +1,8 @@
 package dev.zacharyhubbs.camundareactiveclient.client;
 
 import dev.zacharyhubbs.camundareactiveclient.boot.autoconfigure.WebClientProperties;
-import dev.zacharyhubbs.camundareactiveclient.model.ProcessInstanceImpl;
 import lombok.Data;
+import org.camunda.bpm.engine.rest.dto.runtime.ProcessInstanceDto;
 import org.camunda.bpm.engine.rest.dto.runtime.ProcessInstanceQueryDto;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -44,13 +44,13 @@ public class ProcessInstanceClient implements ReactiveClient {
                 .exchange();
     }
 
-    public ProcessInstanceImpl getResult(String processId) {
+    public ProcessInstanceDto getResult(String processId) {
 
-        return result(processId).flatMap(res -> res.bodyToMono(ProcessInstanceImpl.class)).block();
+        return result(processId).flatMap(res -> res.bodyToMono(ProcessInstanceDto.class)).block();
 
     }
 
-    public List<ProcessInstanceImpl> getResult(ProcessInstanceQueryDto processInstanceQueryDto){
+    public List<ProcessInstanceDto> getResult(ProcessInstanceQueryDto processInstanceQueryDto){
 
         return results(processInstanceQueryDto).flatMap(res -> res.bodyToMono(List.class)).block();
     }
