@@ -13,7 +13,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-@Data
 @Service
 public class TaskClient {
 

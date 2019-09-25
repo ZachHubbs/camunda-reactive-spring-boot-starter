@@ -10,7 +10,6 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-@Data
 @Service
 public class ProcessInstanceClient {
 
