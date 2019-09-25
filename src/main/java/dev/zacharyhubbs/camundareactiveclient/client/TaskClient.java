@@ -13,9 +13,8 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-@Data
 @Service
-public class TaskClient implements ReactiveClient {
+public class TaskClient {
 
     private WebClient webClient;
     private WebClientProperties webClientProperties;
@@ -44,13 +43,13 @@ public class TaskClient implements ReactiveClient {
                 .exchange();
     }
 
-    public TaskDto getResult(String taskId) {
+    public TaskDto getTaskById(String taskId) {
 
         return result(taskId).flatMap(res -> res.bodyToMono(TaskDto.class)).block();
 
     }
 
-    public List<TaskDto> getResult(TaskQueryDto taskQueryDto){
+    public List<TaskDto> getTaskByQuery(TaskQueryDto taskQueryDto){
 
         return results(taskQueryDto).flatMap(res -> res.bodyToMono(List.class)).block();
     }

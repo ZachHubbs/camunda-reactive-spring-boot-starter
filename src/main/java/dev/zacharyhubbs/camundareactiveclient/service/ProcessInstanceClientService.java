@@ -8,20 +8,21 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProcessInstanceService {
+public class ProcessInstanceClientService {
 
-    ProcessInstanceClient processInstanceClient;
+   private ProcessInstanceClient processInstanceClient;
 
 
-    public ProcessInstanceService(ProcessInstanceClient processInstanceClient) {
+    public ProcessInstanceClientService(ProcessInstanceClient processInstanceClient) {
         this.processInstanceClient = processInstanceClient;
     }
 
     public ProcessInstanceDto getProcessInstanceById(String taskId) {
-        return processInstanceClient.getResult(taskId);
+       return processInstanceClient.getProcessInstanceById(taskId).flatMap(res -> res.bodyToMono(ProcessInstanceDto.class)).block();
+
     }
 
     public List<ProcessInstanceDto> getProcessInstanceByQuery(ProcessInstanceQueryDto processInstanceQueryDto) {
-        return processInstanceClient.getResult(processInstanceQueryDto);
+        return processInstanceClient.getProcessInstancesByQuery(processInstanceQueryDto).flatMap(res -> res.bodyToMono(List.class)).block();
     }
 }
