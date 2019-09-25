@@ -6,7 +6,7 @@
 
     <groupId>dev.zacharyhubbs</groupId>
     <artifactId>camunda-reactive-spring-boot-starter</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <properties>
         <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
         <java.version>1.8</java.version>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
+            <version>1.16.22</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -62,7 +62,6 @@
             <groupId>org.camunda.bpm</groupId>
             <artifactId>camunda-engine</artifactId>
             <version>7.11.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -85,6 +84,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring-boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>mockwebserver</artifactId>
+            <version>4.2.0</version>
             <scope>test</scope>
         </dependency>
 
